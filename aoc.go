@@ -11,7 +11,7 @@ func main() {
 	log.SetFlags(0)
 	day := "01" // TODO: get from command line args
 	
-	var data string
+	var data []day01.Operation
 	var output string
 	var err error
 	
@@ -29,12 +29,9 @@ func main() {
 	
 	switch day {
 	case "01":
-		output, err = day01.Solve(data)
+		output = day01.Solve(data)
 	default:
 		log.Fatal("unknown day")
-	}
-	if err != nil {
-		log.Fatal(err)
 	}
 
 	log.Println("Output:", output)
