@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"os"
 
 	"example.com/day00"
 	"example.com/day01"
@@ -15,10 +16,13 @@ type DayOutput interface {
 }
 
 func main() {
-	day := "01" // TODO: get from command line args
+	day := "00"
+	if len(os.Args) > 1 {
+		day = os.Args[1]
+	}
 	
 	var output DayOutput
-	
+
 	switch day {
 	case "00":
 		output = day00.GetOutput()
