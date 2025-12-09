@@ -39,6 +39,21 @@ func GetOutput() Output {
 	}
 }
 
+// GetSolveA implements the DayOutput interface
+func (o Output) GetSolveA() string {
+	return o.SolveA
+}
+
+// GetSolveB implements the DayOutput interface
+func (o Output) GetSolveB() string {
+	return o.SolveB
+}
+
+// GetParsedData implements the DayOutput interface
+func (o Output) GetParsedData() interface{} {
+	return o.ParsedData
+}
+
 func Parse(input string) ([]Operation, error) {
 	step1 := gomme.Sequence(
 		gomme.Alternative(gomme.Token[string]("L"), gomme.Token[string]("R")),
