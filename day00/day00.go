@@ -1,6 +1,7 @@
 package day00
 
 import (
+	"fmt"
 	"log"
 	"os"
 
@@ -49,8 +50,8 @@ func (o Output) GetSolveB() string {
 }
 
 // GetParsedData implements the DayOutput interface
-func (o Output) GetParsedData() interface{} {
-	return o.ParsedData
+func (o Output) GetParsedData() string {
+	return fmt.Sprintf("%v", o.ParsedData)
 }
 
 func Parse(input string) ([]Data, error) {

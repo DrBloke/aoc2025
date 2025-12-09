@@ -11,11 +11,11 @@ import (
 type DayOutput interface {
 	GetSolveA() string
 	GetSolveB() string
-	GetParsedData() interface{}
+	GetParsedData() string // TODO: if this was a string type then we could get rid of the any type
 }
 
 func main() {
-	day := "00" // TODO: get from command line args
+	day := "01" // TODO: get from command line args
 	
 	var output DayOutput
 	
